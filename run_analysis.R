@@ -34,7 +34,7 @@ totaldata <- rbind(totaltest,totaltrain)
 #Extracting only the measures with mean and stdev, this is Step 2
 extracteddata <-totaldata[,c(grepl("subject|activity|mean\\(\\)|std\\(\\)",colnames(totaldata),perl=TRUE))]
 
-#Create a new variable called activity_name and assign descriptive names according to corresponding activity numbers, Step 3
+#Replacing activity numbers with descriptive activity names, Step 3
 extracteddata$activity_name<-factor(extracteddata$activity_name,activity_labels$index,activity_labels$labels)
 
 #Creating tidy data set and saving to file, Step 5
