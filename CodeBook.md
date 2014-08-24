@@ -1,9 +1,4 @@
----
-title: "CodeBook.md"
-output: html_document
----
-
-Description of Input, Output, Transformations and Variables for run_analysis.R
+##Description of Input, Output, Transformations and Variables for run_analysis.R
 
 ####Summary
 The script downoads Human Activity Recognition Using Smartphones Data Set from UCI Machine Learning Repository and ouputs a tidy data set according to the requirements specified.
