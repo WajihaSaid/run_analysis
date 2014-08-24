@@ -33,11 +33,12 @@ colnames(testx) <- features$V2
 colnames(trainx) <- features$V2
 ```
 
-Consolidating and merging data using cbind and rbind. The data is already clean so it is a simple matter of just adding rows and columns instead of element matching
+Consolidating and merging data using cbind and rbind. The data is already clean so it is a simple matter of just adding rows and columns instead of element matching. Writing the consolidated data set to output file
 ```
 totaltest <- cbind(testsubject, testy, testx)
 totaltrain <- cbind(trainsubject, trainy, trainx)
 totaldata <- rbind(totaltest,totaltrain)
+write.table(totaldata,file="totaldata.txt",sep=" ",row.names=FALSE)
 ```
 
 Using grepl to extract only the subject and activity columns and only the columns containing mean() and std() data. meanfreq() has been considered out of scope for this exercise

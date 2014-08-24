@@ -26,10 +26,11 @@ library(data.table)
 colnames(testx) <- features$V2
 colnames(trainx) <- features$V2
 
-#Consolidating & merging data, this is Step 1
+#Consolidating & merging data, writing it out to file. This is Step 1
 totaltest <- cbind(testsubject, testy, testx)
 totaltrain <- cbind(trainsubject, trainy, trainx)
 totaldata <- rbind(totaltest,totaltrain)
+write.table(totaldata,file="totaldata.txt",sep=" ",row.names=FALSE)
 
 #Extracting only the measures with mean and stdev, this is Step 2
 extracteddata <-totaldata[,c(grepl("subject|activity|mean\\(\\)|std\\(\\)",colnames(totaldata),perl=TRUE))]
